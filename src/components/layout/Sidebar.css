@@ -1,0 +1,15 @@
+.sidebar {
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid #eee;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding-top: 16px;
+}
+
+.sidebar .ant-menu-item-selected {
+  background: #e6f0ff !important;
+  color: #006aff !important;
+  font-weight: 600;
+}

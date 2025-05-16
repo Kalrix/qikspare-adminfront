@@ -1,0 +1,56 @@
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f9f9f9;
+}
+
+.dashboard-container {
+  display: flex;
+  flex: 1;
+}
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-content {
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.dashboard-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dashboard-charts {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.chart-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  min-height: 240px;
+}
+
+.dashboard-orders {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.orders-placeholder {
+  color: #888;
+  font-style: italic;
+  padding-top: 8px;
+}
