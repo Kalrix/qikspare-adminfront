@@ -40,12 +40,14 @@ const Sidebar: React.FC = () => {
         <Menu.Item key="/sales" icon={<AppstoreOutlined />}>
           Sales
         </Menu.Item>
+
         <Menu.SubMenu key="accounts" title="Accounts" icon={<FileTextOutlined />}>
-          <Menu.Item key="/create-invoice" icon={<FileAddOutlined />}>
+          <Menu.Item key="/invoices/create" icon={<FileAddOutlined />}>
             Create Invoice
           </Menu.Item>
           <Menu.Item key="/invoices">Invoices</Menu.Item>
         </Menu.SubMenu>
+
         <Menu.Item key="logout" icon={<LogoutOutlined />} danger>
           Logout
         </Menu.Item>

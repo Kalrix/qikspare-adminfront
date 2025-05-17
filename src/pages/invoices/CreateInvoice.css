@@ -1,0 +1,75 @@
+.dashboard-content {
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.party-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+/* PartySelector dropdowns */
+.ant-form-item-label label {
+  font-weight: 500;
+}
+
+.party-card {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  margin-bottom: 16px;
+}
+
+/* Optional styling for InvoiceMeta */
+.ant-picker {
+  width: 100%;
+}
+
+.invoice-items {
+  background: #fafafa;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  border: 1px solid #f0f0f0;
+}
+
+.remove-icon {
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.summary-payment {
+  background: #fcfcfc;
+  padding: 16px;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+}
+
+
+.invoice-items-header {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.invoice-items .item-header {
+  background: #f5f5f5;
+  padding: 8px 0;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+.remove-icon {
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.item-total {
+  font-weight: 500;
+  color: #1a1a1a;
+  padding: 4px 8px;
+  background: #f6f6f6;
+  border-radius: 4px;
+}

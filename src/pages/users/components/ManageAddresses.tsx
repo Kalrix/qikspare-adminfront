@@ -10,7 +10,6 @@ import {
   Tag,
   Row,
   Col,
-  Space,
   Select,
   Modal,
 } from "antd";
@@ -58,11 +57,14 @@ const ManageAddresses: React.FC<Props> = ({ userId, addresses, onRefresh }) => {
 
       if (editingAddress) {
         // Update existing address
-        updatedAddresses = addresses.map((addr) =>
-          addr._id === editingAddress._id
-            ? { ...addr, ...values }
-            : values.is_default ? { ...addr, is_default: false } : addr
-        );
+        updatedAddresses = addresses.map((addr) => {
+          if (addr._id === editingAddress._id) {
+            return { ...addr, ...values };
+          } else if (values.is_default) {
+            return { ...addr, is_default: false };
+          }
+          return addr;
+        });
       } else {
         // Add new address
         updatedAddresses = values.is_default
@@ -72,13 +74,16 @@ const ManageAddresses: React.FC<Props> = ({ userId, addresses, onRefresh }) => {
         updatedAddresses.push(values);
       }
 
+      // Strip _id from addresses before sending to API
+      const cleanedAddresses = updatedAddresses.map(({ _id, ...rest }) => rest);
+
       const res = await fetch(`${API.USERS}/${userId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("qik_token")}`,
         },
-        body: JSON.stringify({ addresses: updatedAddresses }),
+        body: JSON.stringify({ addresses: cleanedAddresses }),
       });
 
       if (res.ok) {
@@ -135,11 +140,7 @@ const ManageAddresses: React.FC<Props> = ({ userId, addresses, onRefresh }) => {
         confirmLoading={loading}
         okText="Save"
       >
-        <Form
-          form={form}
-          layout="vertical"
-          onFinish={handleSubmit}
-        >
+        <Form form={form} layout="vertical" onFinish={handleSubmit}>
           <Form.Item
             name="address_line"
             label="Address Line"
@@ -147,6 +148,7 @@ const ManageAddresses: React.FC<Props> = ({ userId, addresses, onRefresh }) => {
           >
             <Input placeholder="e.g. Street no. 4, Sector 23" />
           </Form.Item>
+
           <Row gutter={16}>
             <Col span={12}>
               <Form.Item name="city" label="City" rules={[{ required: true }]}>
