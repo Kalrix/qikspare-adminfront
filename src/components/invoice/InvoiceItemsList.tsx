@@ -82,9 +82,39 @@ const InvoiceItemsList: React.FC<{ form: any }> = ({ form }) => {
                 <Col span={3}>
                   <Form.Item name={[field.name, "category"]}>
                     <Select placeholder="Category">
-                      <Option value="engine">Engine</Option>
-                      <Option value="brake">Brake</Option>
-                      <Option value="electrical">Electrical</Option>
+                    <Option value="maintenance_service_parts">Maintenance Service Parts</Option>
+<Option value="air_conditioning">Air Conditioning</Option>
+<Option value="belts_chains_rollers">Belts Chains and Rollers</Option>
+<Option value="bearings">Bearings</Option>
+<Option value="body">Body</Option>
+<Option value="control_cables">Control Cables</Option>
+<Option value="brake_system">Brake System</Option>
+<Option value="car_accessories">Car Accessories</Option>
+<Option value="clutch_system">Clutch System</Option>
+<Option value="electric_components">Electric Components</Option>
+<Option value="engine">Engine</Option>
+<Option value="engine_cooling_system">Engine Cooling System</Option>
+<Option value="exhaust_system">Exhaust System</Option>
+<Option value="filters">Filters</Option>
+<Option value="fuel_supply_system">Fuel Supply System</Option>
+<Option value="gaskets_sealing_rings">Gaskets and Sealing Rings</Option>
+<Option value="ignition_glowplug_system">Ignition and Glowplug System</Option>
+<Option value="interior_comfort">Interior and Comfort</Option>
+<Option value="lighting">Lighting</Option>
+<Option value="oils_fluids">Oils and Fluids</Option>
+<Option value="pipes_hoses">Pipes and Hoses</Option>
+<Option value="repair_kits">Repair Kits</Option>
+<Option value="sensors_relays_control_units">Sensors Relays and Control Units</Option>
+<Option value="steering">Steering</Option>
+<Option value="suspension_arms">Suspension and Arms</Option>
+<Option value="towbar_parts">Towbar Parts</Option>
+<Option value="transmission">Transmission</Option>
+<Option value="trims">Trims</Option>
+<Option value="tyres_alloys">Tyres and Alloys</Option>
+<Option value="universal">Universal</Option>
+<Option value="wheels">Wheels</Option>
+<Option value="windscreen_cleaning_system">Windscreen Cleaning System</Option>
+
                     </Select>
                   </Form.Item>
                 </Col>
